@@ -9,3 +9,6 @@ handle['/upload'] = requestHandlers.upload;
 handle['/show'] = requestHandlers.show;
 
 server.start(router.route, handle);
+
+
+// node 运行 index.js  然后浏览器打开 http://localhost:8000/
