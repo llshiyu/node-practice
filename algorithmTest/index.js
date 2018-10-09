@@ -10,30 +10,22 @@ rl.prompt()
  * 1.在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。
  * 请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
  */
-function f1(arr, t) {
-    let arrLen = arr.length;
-    for (let i = arrLen - 1, j = 0; i >= 0, j < arrLen; i--, j++) {
-        if (t === arr[i][j]) {
-            return true
-        } else if (t < arr[i][j]) {
+function f1(array, target) {
+    let arrLen = array.length-1;
+    for (let i = arrLen, j = 0; i >= 0&& j < array[i].length;) {
+        if (target === array[i][j]) {
+            return true;
+        } else if (target < array[i][j]) {
             i--;
             continue;
-        } else {
+        } else if (target > array[i][j]) {
             j++;
             continue;
         }
     }
-    return false
+    return false;
 }
 
-// let arr, t;
-// rl.on('line', (input) => {
-//     rl.write('write 11,')
-//     console.log(`输出: ${input}`)
-// }).on('close', () => {
-//     console.log('关闭了');
-//     process.exit(0)
-// })
 
 /***
  * 2.请实现一个函数，将一个字符串中的空格替换成“%20”。
@@ -42,10 +34,6 @@ function f1(arr, t) {
 function f2(str) {
     return str.replace(/ /g, '%20');
 }
-
-// rl.on('line', (input) => {
-//     console.log(f2(input))
-// })
 
 /***
  * 3.输入一个链表，从尾到头打印链表每个节点的值。
