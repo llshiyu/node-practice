@@ -1,4 +1,7 @@
 {
   "name": "square",
-  "main": "./modelText/square.js"
+  "main": "./modelText/square.js",
+  "dependencies": {
+    "node-xlsx": "^0.12.1"
+  }
 }
